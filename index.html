@@ -139,13 +139,20 @@
 							<input id="to_places" class="form-control" placeholder="Nhap vi tri muon di" />
 							<input id="destination" type="hidden" name="destination" required />
 							</div>
+							<div class="form-group">
+								<label id="label_map"> Chọn Xe: </label>
+								<select name="chon_xe" id="chon_xe" class="form-control">
+									<option value="xe4cho">Xe 4 Chỗ</option>
+									<option value="xe7cho">Xe 7 Chỗ</option>
+								  </select>
+							</div>
 
 							<div class="form-group">
 								<label id="label_map"> Thời Gian Dự Định: </label>
-								<input type="datetime-local" class="form-control" id="time_start" name="time_start">
-								
+								<input type="datetime-local" class="form-control" id="time_start" name="time_start">								
 							</div>
-							<input type="submit" value="Calculate" class="btn btn-primary" id="myBtn">
+							<input type="submit" value="Tính Cước" class="btn btn-primary" id="myBtn">
+
 						</form>
 		
 						<div id="result">
