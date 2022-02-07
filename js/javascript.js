@@ -59,8 +59,10 @@
                 var distance_in_mile = distance.value / 1609.34; // the mile
                 var duration_text = duration.text;
                 var duration_value = duration.value;
+                var xe = document.getElementById("chon_xe");
+                var xecho = xe.value;
                 $('#in_mile').text(distance_in_mile.toFixed(2));
-                $('#in_kilo').text((distance_in_kilo.toFixed(2)*15000).toLocaleString('it-IT', {style : 'currency', currency : 'VND'}));
+                $('#in_kilo').text((distance_in_kilo.toFixed(2)*parseInt(xecho)).toLocaleString('it-IT', {style : 'currency', currency : 'VND'}));
                 $('#duration_text').text(duration_text);
                 $('#duration_value').text(duration_value);
                 $('#from').text(origin);
