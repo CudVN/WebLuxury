@@ -92,6 +92,82 @@
 		</div><!--/header-bottom-->
 	</header><!--/header-->
 	
+	<!-- PHẦN NỘI DUNG POPUP -->
+	<div id="myModal" class="modal">
+		<!-- Modal content -->
+		<div class="modal-content">
+			<div class="modal-header">
+				<span class="close">&times;</span>
+				<h2>Modal Header</h2>
+			</div>
+			<div class="modal-body">
+				<p>Some text in the Modal Body</p>
+				<p id="sotien"></p>
+
+				<input type="submit" value="Ok" id="OK">
+				<p>Some text in the Modal Body</p>
+				<p>Some other text...</p>
+				<input type="button" value="Ok" id="OK1">
+				<p>Some text in the Modal Body</p>
+				<p>Some other text...</p>
+				<input type="button" value="Ok" id="OK2">
+				<p>Some text in the Modal Body</p>
+				<p>Some other text...</p>
+				<input type="button" value="Ok" id="OK3">
+			</div>
+			<div class="modal-footer">
+				<h3>Modal Footer</h3>
+			</div>					  
+		</div>
+	</div>
+	
+
+	<section id="slider"><!--dat xe-->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">	
+					<div class="col-sm-6">
+						<form id="distance_form">
+							<div class="form-group">
+							<label id="label_map"> Điểm Đón: </label>
+							<input id="from_places" class="form-control" placeholder="Nhap vi tri don" />
+							<input id="origin" type="hidden" name="origin" required />
+							</div>
+		
+							<div class="form-group">
+							<label id="label_map"> Điểm Đến: </label>
+							<input id="to_places" class="form-control" placeholder="Nhap vi tri muon di" />
+							<input id="destination" type="hidden" name="destination" required />
+							</div>
+
+							<div class="form-group">
+								<label id="label_map"> Thời Gian Dự Định: </label>
+								<input type="datetime-local" class="form-control" id="time_start" name="time_start">
+								
+							</div>
+							<input type="submit" value="Calculate" class="btn btn-primary" id="myBtn">
+						</form>
+		
+						<div id="result">
+							<ul class="list-group">
+								<li class="list-group-item d-flex justify-content-between align-items-center">Distance In Mile :</li>
+								<li class="list-group-item d-flex justify-content-between align-items-center">Distance is Kilo: <label id="in_kilo"></label></li>
+								<li class="list-group-item d-flex justify-content-between align-items-center">IN TEXT:</li>
+								<li class="list-group-item d-flex justify-content-between align-items-center">IN MINUTES:</li>
+								<li class="list-group-item d-flex justify-content-between align-items-center">FROM:</li>
+								<li class="list-group-item d-flex justify-content-between align-items-center">TO:</li>
+							</ul>
+						</div>
+					</div>
+						
+					<div class="col-sm-6">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.293876965511!2d106.71952421522323!3d10.941159192209923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d7f3d2c15cdd%3A0x182cae6146fac186!2zROG7i2NoIFbhu6UgRHUgTOG7i2NoIELDrG5oIETGsMahbmcgJiBTw6BpIEfDsm4gTHV4dXJ5X2xlZ2VuZCAx!5e0!3m2!1svi!2s!4v1644222696567!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+					</div>			
+				</div>
+			</div>
+		</div>
+	</section><!--/dat xe-->
+
 	<section id="slider"><!--slider-->
 		<div class="container">
 			<div class="row">
@@ -600,11 +676,43 @@
 	
 
   
+
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDi-dB6ZoS8B9F_UogzuqqS13DdSzwzF1I&libraries=places&region=vn&language=vi"></script>
     <script src="js/jquery.js"></script>
+	<script src="js/javascript.js" ></script>   
 	<script src="js/bootstrap.min.js"></script>
 <!-- 	<script src="js/jquery.scrollUp.min.js"></script> -->
 	<script src="js/price-range.js"></script>
     <script src="js/jquery.prettyPhoto.js"></script>
     <script src="js/main.js"></script>
+	<script>
+		// Get the modal
+		var modal = document.getElementById("myModal");
+		
+		// Get the button that opens the modal
+		var btn = document.getElementById("myBtn");
+		var btn2 = document.getElementById("OK");
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+		
+		// When the user clicks the button, open the modal 
+		btn.onclick = function() {
+		  modal.style.display = "block";
+		}
+		btn2.onclick = function() {
+		  modal.style.display = "none";
+		}
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function() {
+		  modal.style.display = "none";
+		}
+		
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+		  if (event.target == modal) {
+			modal.style.display = "none";
+		  }
+		}
+		</script>
 </body>
 </html>
