@@ -125,11 +125,12 @@
 				<h4>Điền Thông Tin Người Đặt Xe</h4>
 				<div class="form-group row">
 					<input type="text" class="form-control" name="FullName" id="FullName" value=""
-						placeholder="Họ và tên Người Đặt Xe" id="txtFullName">
+						placeholder="Họ và tên Người Đặt Xe" required>
 				</div>
 				<div class="form-group row">
 					<input type="number" class="form-control" name="Phone" id="Phone" value=""
-						placeholder="Số điện thoại Người Đặt Xe" required="" id="txtPhone">
+						placeholder="Số điện thoại Người Đặt Xe" required>
+						<p id="noti" style="color: red;"></p>
 				</div>
 				<div class="form-group row">
 					<textarea class="form-control" rows="3"
@@ -155,14 +156,14 @@
 							<div class="form-group">
 								<label id="label_map"><i class="fa fa-map-marker" aria-hidden="true"></i> Điểm Đón:
 								</label>
-								<input id="from_places" class="form-control" placeholder="Nhập điểm đón" />
+								<input id="from_places" class="form-control" placeholder="Nhập điểm đón" required />
 								<input id="origin" type="hidden" name="origin" required />
 							</div>
 
 							<div class="form-group">
 								<label id="label_map"><i class="fa fa-map-marker" aria-hidden="true"></i> Điểm Đến:
 								</label>
-								<input id="to_places" class="form-control" placeholder="Nhập điểm đến" />
+								<input id="to_places" class="form-control" placeholder="Nhập điểm đến" required/>
 								<input id="destination" type="hidden" name="destination" required />
 							</div>
 
@@ -957,11 +958,16 @@
 		
 		// When the user clicks the button, open the modal 
 		btn.onclick = function () {
-			modal.style.display = "block";
+			if(document.getElementById("from_places").value != "" && document.getElementById("to_places").value != "")
+			modal.style.display = "block";			
 		}
-		btnDatXe.onclick = function () {
-			sendEmail();
-			modal.style.display = "none";			
+		btnDatXe.onclick = function () {			
+			if(document.getElementById("Phone").value!="")
+			{
+				sendEmail();
+				modal.style.display = "none";
+			}else
+				document.getElementById("noti").innerHTML = "(Vui lòng nhập số điện thoại)";
 		}
 		// When the user clicks on <span> (x), close the modal
 		span.onclick = function () {
