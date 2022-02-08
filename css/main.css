@@ -2748,6 +2748,7 @@ textarea {
     #label_map{
         color: gold;
     }
+    .img-responsive1{display:block;max-width:100%}
 
     /* The Modal (background) */
     .modal {
@@ -2811,7 +2812,13 @@ textarea {
         color: white;
     }
     
-    .modal-body {padding: 2px 16px;}
+    .modal-body {
+        padding: 2px 16px;
+        margin: 2px 16px;
+    }
+    .modal-body i {
+        color:#cc0e0e;
+    }
     
     .modal-footer {
         padding: 2px 16px;
