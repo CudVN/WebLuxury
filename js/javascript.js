@@ -67,12 +67,12 @@ var emailBody ='';
                 $('#duration_value').text(duration_value);
                 $('#from').text(origin);
                 $('#to').text(destination); */
-                var loaixe = xecho==12000 ? "Xe 4 chỗ" : "Xe 7 chỗ"
+                var loaixe = xecho==12000 ? "Xe 4 chỗ" : "Xe 7 chỗ";
                 $('#diem_don').text(origin);
                 $('#diem_den').text(destination);
                 $('#loai_xe').text(loaixe);
                 $('#thoi_gian').text(document.getElementById("time_start").value);
-                $('#so_tien').text((distance_in_kilo.toFixed(2)*parseInt(xecho)).toLocaleString('it-IT', {style : 'currency', currency : 'VND'}));
+                $('#so_tien').text((distance_in_kilo.toFixed(2)*parseInt(xecho)).toLocaleString('it-IT', {style : 'currency', currency : 'VND'}) + " (Chưa bao gồm phí cầu đường, sân bay...)");
                 
                 emailBody += "Điểm đón: " + origin
 					+ "<br />Điểm đến: "  + destination

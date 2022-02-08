@@ -121,11 +121,8 @@
 				<label>Thời gian: </label> <i id="thoi_gian"></i>
 				<br>
 				<label>Số tiền: </label> <i id="so_tien"></i>
-
-				<div class="form-group row">
-					<hr>
-					<b>Điền Thông Tin Người Đặt Xe</b>
-				</div>
+				<br>
+				<h4>Điền Thông Tin Người Đặt Xe</h4>
 				<div class="form-group row">
 					<input type="text" class="form-control" name="FullName" id="FullName" value=""
 						placeholder="Họ và tên Người Đặt Xe" id="txtFullName">
@@ -188,6 +185,7 @@
 						</form>
 
 						<div id="result">
+							
 						</div>
 					</div>
 
@@ -950,7 +948,6 @@
 	<script>
 		// Get the modal
 		var modal = document.getElementById("myModal");
-
 		// Get the button that opens the modal
 		var btn = document.getElementById("myBtn");
 		var btnDatXe = document.getElementById("OK");
@@ -964,7 +961,7 @@
 		}
 		btnDatXe.onclick = function () {
 			sendEmail();
-			modal.style.display = "none";
+			modal.style.display = "none";			
 		}
 		// When the user clicks on <span> (x), close the modal
 		span.onclick = function () {
@@ -974,7 +971,7 @@
 		// When the user clicks anywhere outside of the modal, close it
 		window.onclick = function (event) {
 			if (event.target == modal) {
-				modal.style.display = "none";
+				modal.style.display = "none";				
 			}
 		}		
 	</script>
