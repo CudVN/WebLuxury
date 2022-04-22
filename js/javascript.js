@@ -67,7 +67,7 @@ var emailBody ='';
                 $('#duration_value').text(duration_value);
                 $('#from').text(origin);
                 $('#to').text(destination); */
-                var loaixe = xecho==12000 ? "Xe 4 chỗ" : "Xe 7 chỗ"
+                var loaixe = xecho==14000 ? "Xe 4 chỗ" : "Xe 7 chỗ"
                 $('#diem_don').text(origin);
                 $('#diem_den').text(destination);
                 $('#loai_xe').text(loaixe);
